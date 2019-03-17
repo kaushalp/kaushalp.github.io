@@ -1,6 +1,6 @@
 ---
 id: 1595
-title: 'Azure App Service: How to read &#038; parse connection strings via PHP'
+title: 'Azure App Service: How to read & parse connection strings via PHP'
 date: 2017-05-04T13:20:52+00:00
 author: kaushal
 layout: post
@@ -9,39 +9,39 @@ permalink: /2017/05/04/azure-app-service-how-to-read-parse-connection-strings-vi
 opengraph_tags:
   - |
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Azure App Service: How to read &amp; parse connection strings via PHP" />
+    <meta property="og:title" content="Azure App Service: How to read & parse connection strings via PHP" />
     <meta property="og:url" content="https://blogs.msdn.microsoft.com/kaushal/2017/05/04/azure-app-service-how-to-read-parse-connection-strings-via-php/" />
     <meta property="og:site_name" content="Unleashed" />
     <meta property="og:description" content="On Azure App Service, developers have the ability to configure the connection strings as key-value pair under App Settings section. Here is a sample screenshot: At runtime, Azure App Service retrieves this key-value pair for you and makes them available to your hosted application. These are provided to the web app as Environment Variables. Here..." />
     <meta property="og:image" content="https://msdnshared.blob.core.windows.net/media/2017/05/image_thumb52.png" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Azure App Service: How to read &amp; parse connection strings via PHP" />
+    <meta name="twitter:title" content="Azure App Service: How to read & parse connection strings via PHP" />
     <meta name="twitter:url" content="https://blogs.msdn.microsoft.com/kaushal/2017/05/04/azure-app-service-how-to-read-parse-connection-strings-via-php/" />
     <meta name="twitter:description" content="On Azure App Service, developers have the ability to configure the connection strings as key-value pair under App Settings section. Here is a sample screenshot: At runtime, Azure App Service retrieves this key-value pair for you and makes them available to your hosted application. These are provided to the web app as Environment Variables. Here..." />
     <meta name="twitter:image" content="https://msdnshared.blob.core.windows.net/media/2017/05/image_thumb52.png" />
 
   - |
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Azure App Service: How to read &amp; parse connection strings via PHP" />
+    <meta property="og:title" content="Azure App Service: How to read & parse connection strings via PHP" />
     <meta property="og:url" content="https://blogs.msdn.microsoft.com/kaushal/2017/05/04/azure-app-service-how-to-read-parse-connection-strings-via-php/" />
     <meta property="og:site_name" content="Unleashed" />
     <meta property="og:description" content="On Azure App Service, developers have the ability to configure the connection strings as key-value pair under App Settings section. Here is a sample screenshot: At runtime, Azure App Service retrieves this key-value pair for you and makes them available to your hosted application. These are provided to the web app as Environment Variables. Here..." />
     <meta property="og:image" content="https://msdnshared.blob.core.windows.net/media/2017/05/image_thumb52.png" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Azure App Service: How to read &amp; parse connection strings via PHP" />
+    <meta name="twitter:title" content="Azure App Service: How to read & parse connection strings via PHP" />
     <meta name="twitter:url" content="https://blogs.msdn.microsoft.com/kaushal/2017/05/04/azure-app-service-how-to-read-parse-connection-strings-via-php/" />
     <meta name="twitter:description" content="On Azure App Service, developers have the ability to configure the connection strings as key-value pair under App Settings section. Here is a sample screenshot: At runtime, Azure App Service retrieves this key-value pair for you and makes them available to your hosted application. These are provided to the web app as Environment Variables. Here..." />
     <meta name="twitter:image" content="https://msdnshared.blob.core.windows.net/media/2017/05/image_thumb52.png" />
 
   - |
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Azure App Service: How to read &amp; parse connection strings via PHP" />
+    <meta property="og:title" content="Azure App Service: How to read & parse connection strings via PHP" />
     <meta property="og:url" content="https://blogs.msdn.microsoft.com/kaushal/2017/05/04/azure-app-service-how-to-read-parse-connection-strings-via-php/" />
     <meta property="og:site_name" content="Unleashed" />
     <meta property="og:description" content="On Azure App Service, developers have the ability to configure the connection strings as key-value pair under App Settings section. Here is a sample screenshot: At runtime, Azure App Service retrieves this key-value pair for you and makes them available to your hosted application. These are provided to the web app as Environment Variables. Here..." />
     <meta property="og:image" content="https://msdnshared.blob.core.windows.net/media/2017/05/image_thumb52.png" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Azure App Service: How to read &amp; parse connection strings via PHP" />
+    <meta name="twitter:title" content="Azure App Service: How to read & parse connection strings via PHP" />
     <meta name="twitter:url" content="https://blogs.msdn.microsoft.com/kaushal/2017/05/04/azure-app-service-how-to-read-parse-connection-strings-via-php/" />
     <meta name="twitter:description" content="On Azure App Service, developers have the ability to configure the connection strings as key-value pair under App Settings section. Here is a sample screenshot: At runtime, Azure App Service retrieves this key-value pair for you and makes them available to your hosted application. These are provided to the web app as Environment Variables. Here..." />
     <meta name="twitter:image" content="https://msdnshared.blob.core.windows.net/media/2017/05/image_thumb52.png" />
