@@ -1,6 +1,6 @@
 ---
 id: 411
-title: 'AZURE REST API &#038; PowerShell: Retrieve Cloud Service Configuration'
+title: 'AZURE REST API and PowerShell: Retrieve Cloud Service Configuration'
 date: 2015-06-02T06:00:57+00:00
 author: kaushal
 layout: post
@@ -75,7 +75,7 @@ opengraph_tags:
     <meta name="twitter:url" content="https://blogs.msdn.microsoft.com/kaushal/2015/06/02/azure-rest-api-powershell-retrieve-cloud-service-configuration/" />
     <meta name="twitter:description" content="Recently I was working on an issue where we had to retrieve PaaS instance configuration details like the RDP, OS Family, Reserved IP etc. Typically this is present in the .cscfg file of a Cloud Service. We had to retrieve these details via Azure Service Management REST API. Documentation on the Operations on Cloud Services..." />
     <meta name="twitter:image" content="https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/38/03/metablogapi/7444.060315_0550_AZURERESTAP1.png" />
-    
+
   - |
     <meta property="og:type" content="article" />
     <meta property="og:title" content="AZURE REST API &amp; PowerShell: Retrieve Cloud Service Configuration" />
@@ -88,7 +88,7 @@ opengraph_tags:
     <meta name="twitter:url" content="https://blogs.msdn.microsoft.com/kaushal/2015/06/02/azure-rest-api-powershell-retrieve-cloud-service-configuration/" />
     <meta name="twitter:description" content="Recently I was working on an issue where we had to retrieve PaaS instance configuration details like the RDP, OS Family, Reserved IP etc. Typically this is present in the .cscfg file of a Cloud Service. We had to retrieve these details via Azure Service Management REST API. Documentation on the Operations on Cloud Services..." />
     <meta name="twitter:image" content="https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/38/03/metablogapi/7444.060315_0550_AZURERESTAP1.png" />
-    
+
   - |
     <meta property="og:type" content="article" />
     <meta property="og:title" content="AZURE REST API &amp; PowerShell: Retrieve Cloud Service Configuration" />
@@ -101,7 +101,7 @@ opengraph_tags:
     <meta name="twitter:url" content="https://blogs.msdn.microsoft.com/kaushal/2015/06/02/azure-rest-api-powershell-retrieve-cloud-service-configuration/" />
     <meta name="twitter:description" content="Recently I was working on an issue where we had to retrieve PaaS instance configuration details like the RDP, OS Family, Reserved IP etc. Typically this is present in the .cscfg file of a Cloud Service. We had to retrieve these details via Azure Service Management REST API. Documentation on the Operations on Cloud Services..." />
     <meta name="twitter:image" content="https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/38/03/metablogapi/7444.060315_0550_AZURERESTAP1.png" />
-    
+
 categories:
   - Uncategorized
 ---
@@ -137,35 +137,35 @@ categories:
           <span style="color:white; font-family:Segoe UI; font-size:12pt"><strong>Method</strong></span>
         </p>
       </td>
-      
+
       <td style="padding-left: 7px; padding-right: 7px; border-top:  solid 2.25pt; border-left:  none; border-bottom:  solid 2.25pt; border-right:  solid 2.25pt">
         <p style="text-align: center">
           <span style="color:white; font-family:Segoe UI; font-size:12pt"><strong>Request URI</strong></span>
         </p>
       </td>
     </tr>
-    
+
     <tr style="height: 41px">
       <td vAlign="middle" style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 2.25pt; border-bottom:  solid 1.0pt; border-right:  solid 1.0pt">
         <p style="text-align: center">
           <span style="font-family:Segoe UI; font-size:10pt">GET</span>
         </p>
       </td>
-      
+
       <td vAlign="middle" style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 1.0pt; border-right:  solid 2.25pt">
         <p>
           <a href="https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deploymentslots/<deployment-slot"><span style="font-family:Segoe UI; font-size:10pt">https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deploymentslots/<deployment-slot</span></a><span style="font-family:Segoe UI; font-size:10pt">> </span>
         </p>
       </td>
     </tr>
-    
+
     <tr style="height: 41px">
       <td vAlign="middle" style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 2.25pt; border-bottom:  solid 2.25pt; border-right:  solid 1.0pt">
         <p style="text-align: center">
           <span style="font-family:Segoe UI; font-size:10pt">GET</span>
         </p>
       </td>
-      
+
       <td vAlign="middle" style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 2.25pt; border-right:  solid 2.25pt">
         <p>
           <a href="https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name"><span style="font-family:Segoe UI; font-size:10pt">https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name</span></a><span style="font-family:Segoe UI; font-size:10pt">> </span>
@@ -195,7 +195,7 @@ categories:
   2. <div>
       <span style="font-family:Segoe UI; font-size:10pt">Some <strong>Azure Service Management REST API</strong>&#8216;s require additional headers to be sent along with the request. Read the documentation for the API before proceeding further.<br /> </span>
     </div>
-    
+
       1. <span style="font-family:Segoe UI; font-size:10pt">The <strong>Get Deployment</strong> API requires the <strong>x-ms-version</strong> header in HTTP Request. Below is the snippet of the documentation for this API from MSDN.<br /> </span>
 
 <div style="margin-left: 34pt">
@@ -206,21 +206,21 @@ categories:
           <span style="color:white; font-family:Segoe UI; font-size:12pt"><strong>Request Header</strong></span>
         </p>
       </td>
-      
+
       <td style="padding-left: 7px; padding-right: 7px; border-top:  solid 2.25pt; border-left:  none; border-bottom:  solid 2.25pt; border-right:  solid 2.25pt">
         <p style="text-align: center">
           <span style="color:white; font-family:Segoe UI; font-size:12pt"><strong>Description</strong></span>
         </p>
       </td>
     </tr>
-    
+
     <tr style="height: 41px">
       <td vAlign="middle" style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 2.25pt; border-bottom:  solid 2.25pt; border-right:  solid 2.25pt">
         <p style="text-align: center">
           <span style="font-family:Segoe UI; font-size:10pt">x-ms-version</span>
         </p>
       </td>
-      
+
       <td vAlign="middle" style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 2.25pt; border-right:  solid 2.25pt">
         <p>
           <span style="font-family:Segoe UI; font-size:10pt">Required. Specifies the version of the operation to use for this request. This header should be set to <span style="background-color:yellow"><strong>2009-10-01</strong> or higher</span>. For more information about versioning headers, see <a href="https://msdn.microsoft.com/en-us/library/azure/gg592580.aspx">Service Management Versioning</a>.</span>
@@ -257,7 +257,7 @@ categories:
         <p>
           <span style="color:black; font-family:Courier New; font-size:9pt"><span style="background-color:yellow">makecert -sky exchange -r -n &#8220;CN=</span><span style="background-color:lime"><CertificateName></span><span style="background-color:yellow">&#8221; -pe -a sha1 -len 2048 -ss My &#8220;</span><span style="background-color:lime"><CertificateName></span><span style="background-color:yellow">.cer&#8221;</span><span style="color:white"><br /> </span></span>
         </p>
-        
+
         <p>
           <span style="font-family:Segoe UI; font-size:9pt">Replace the highlighted section (in green) in the above command with your inputs</span>
         </p>
@@ -278,7 +278,7 @@ categories:
   * <div>
       <span style="font-family:Segoe UI; font-size:10pt">This view is the <strong>current user certificate store</strong> as shown below<br /> </span>
     </div>
-    
+
 <img src="https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/38/03/metablogapi/8877.060315_0550_AZURERESTAP2.png" original-url="http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-38-03-metablogapi/8877.060315_5F00_0550_5F00_AZURERESTAP2.png" alt="" /> <span style="font-family:Segoe UI; font-size:10pt"><br /> </span>
 
   * <span style="font-family:Segoe UI; font-size:10pt">Export the certificate without the private key and store it on your hard drive.<br /> </span>
@@ -286,7 +286,7 @@ categories:
   * <div>
       <span style="font-family:Segoe UI; font-size:10pt">Scroll down to the <strong>SETTINGS</strong> section.<br /> </span>
     </div>
-    
+
 <img src="https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/01/38/03/metablogapi/8484.060315_0550_AZURERESTAP3.png" original-url="http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-38-03-metablogapi/8484.060315_5F00_0550_5F00_AZURERESTAP3.png" alt="" /> <span style="font-family:Segoe UI; font-size:10pt"><br /> </span>
 
   * <span style="font-family:Segoe UI; font-size:10pt">In the centre pane, click on <strong>MANAGEMENT CERTIFICATES</strong> & then click on <strong>UPLOAD</strong>.<br /> </span>
@@ -294,7 +294,7 @@ categories:
   * <div>
       <span style="font-family:Segoe UI; font-size:10pt">Make a note of the Certificate thumbprint.<br /> </span>
     </div>
-    
+
      
 
 <div>
@@ -322,23 +322,23 @@ categories:
         <p style="background: white">
           <span style="color:darkgreen; font-family:Courier New; font-size:9pt">#Request Headers required to invoke the GET DEPLOYMENT REST API<br /><span style="color:orangered">$method</span><br /> <span style="color:darkgray">=</span><br /> <span style="color:darkred">&#8220;GET&#8221;<br /><span style="color:orangered">$headerDate</span><br /> <span style="color:darkgray">=</span> &#8216;2009-10-01&#8217;<br /><span style="color:orangered">$headers</span><br /> <span style="color:darkgray">=</span> @{&#8220;x-ms-version&#8221;<span style="color:darkgray">=<span style="color:darkred">&#8220;<span style="color:orangered">$headerDate<span style="color:darkred">&#8220;</span>}</span><br /> </span></span></span></span>
         </p>
-        
+
         <p style="background: white">
           <span style="font-family:Courier New; font-size:9pt"><span style="color:darkgreen">#Retrieving the subscription ID<br /><span style="color:orangered">$subID</span><br /> <span style="color:darkgray">=</span> (<span style="color:blue">Get-AzureSubscription</span><br /> <span style="color:navy">-Current</span>)<span style="color:darkgray">.</span>SubscriptionId </span><br /><span style="color:orangered">$URI</span><br /> <span style="color:darkgray">=</span><br /> <a href="https://management.core.windows.net/$subID/services/hostedservices/kaushalz/deployments/4f006bb7d2874dd4895f77a97b7938d0">https://management.core.windows.net/$subID/services/hostedservices/kaushalz/deployments/4f006bb7d2874dd4895f77a97b7938d0</a><span style="color:darkred"><br /> </span></span>
         </p>
-        
+
         <p style="background: white">
           <span style="color:darkgreen; font-family:Courier New; font-size:9pt">#Retrieving the certificate from Local Store<br /><span style="color:orangered">$cert</span><br /> <span style="color:darkgray">=</span> (<span style="color:blue">Get-ChildItem</span><br /> <span style="color:blueviolet">Cert:\CurrentUser\My</span><br /> <span style="color:darkgray">|</span><br /> <span style="color:blue">?</span>{<span style="color:orangered">$_<span style="color:darkgray">.</span>Thumbprint <span style="color:darkgray">-eq</span><br /> <span style="color:darkred">&#8220;B4D460D985F1D07A6B9F8BFD67E36BC53A4490FC&#8221;</span>})<span style="color:darkgray">.</span>GetRawCertData()<span style="color:darkred"><br /> </span></span></span>
         </p>
-        
+
         <p style="background: white">
           <span style="color:darkgreen; font-family:Courier New; font-size:9pt">#converting the raw cert data to BASE64<br /><span style="color:orangered">body</span><br /> <span style="color:darkgray">=</span><br /> <span style="color:darkred">&#8220;<Binary>&#8212;&#8211;BEGIN CERTIFICATE&#8212;&#8211;`n</span>$(<span style="color:darkgray">[<span style="color:teal">convert<span style="color:darkgray">]::</span>ToBase64String(<span style="color:orangered">$cert</span>))<span style="color:darkred">`n&#8212;&#8211;END CERTIFICATE&#8212;&#8211;</Binary>&#8221;<br /> </span></span></span></span>
         </p>
-        
+
         <p style="background: white">
           <span style="font-family:Courier New; font-size:9pt"><span style="color:darkgreen">#Retrieving the certificate ThumbPrint<br /><span style="color:orangered">$mgmtCertThumb</span><br /> <span style="color:darkgray">=</span> (<span style="color:blue">Get-AzureSubscription</span><br /> <span style="color:navy">-Current</span>)<span style="color:darkgray">.</span>Certificate<span style="color:darkgray">.</span>Thumbprint</span><br /> </span>
         </p>
-        
+
         <p style="background: white">
           <span style="color:darkgreen; font-family:Courier New; font-size:9pt">#Passing all the above parameters to Invoke-RestMethod cmdlet<br /><span style="color:blue">Invoke-RestMethod</span><br /> <span style="color:navy">-Uri</span><br /> <span style="color:orangered">$URI</span><br /> <span style="color:navy">-Method</span><br /> <span style="color:orangered">$method</span><br /> <span style="color:navy">-Headers</span><br /> <span style="color:orangered">$headers</span><br /> <span style="color:navy">-CertificateThumbprint</span><br /> <span style="color:darkred">&#8221; B4D460D985F1D07A6B9F8BFD67E36BC53A4490FC&#8221;</span><br /> <span style="color:navy">-ContentType</span><br /> <span style="color:orangered">$ContentType</span></span>
         </p>
@@ -377,7 +377,7 @@ categories:
         <p style="background: white">
           <span style="color:darkgreen; font-family:Courier New; font-size:9pt">#Getting the response from the REST API and saving it as a XML object<br /><span style="color:darkgray">[<span style="color:teal">xml<span style="color:darkgray">]<span style="color:orangered">$url</span> =</span><br /> <span style="color:blue">Invoke-RestMethod</span><br /> <span style="color:navy">-Uri</span><br /> <span style="color:orangered">$URI</span><br /> <span style="color:navy">-Method</span><br /> <span style="color:orangered">$method</span><br /> <span style="color:navy">-Headers</span><br /> <span style="color:orangered">$headers</span><br /> <span style="color:navy">-CertificateThumbprint</span><br /> <span style="color:darkred">&#8220;B4D460D985F1D07A6B9F8BFD67E36BC53A4490FC&#8221;</span><br /> <span style="color:navy">-ContentType</span><br /> <span style="color:orangered">$ContentType<span style="color:darkgreen"><br /> </span></span></span></span></span>
         </p>
-        
+
         <p style="background: white">
           <span style="color:darkgreen; font-family:Courier New; font-size:9pt">#Printing the XML<br /><span style="color:blue">write</span><br /> <span style="color:orangered">$url<span style="color:darkgray">.</span>ChildNodes</span></span>
         </p>
@@ -397,7 +397,7 @@ categories:
         <p>
           <span style="font-family:Segoe UI; font-size:10pt"><strong>NOTE</strong>: The Configuration section in the above output is a Base-64 encoded string. You would have to add the following snippet to parse this further:<br /> </span>
         </p>
-        
+
         <p style="background: white">
           <span style="font-family:Courier New; font-size:9pt"><span style="color:orangered">$base64encodedconfiguration</span><br /> <span style="color:darkgray">=</span><br /> <span style="color:orangered">$url<span style="color:darkgray">.</span>Deployment<span style="color:darkgray">.</span>Configuration</span><br /><span style="color:orangered">$d<span style="color:darkgray">=</span><br /> <span style="color:darkgray">[<span style="color:teal">System.Convert<span style="color:darkgray">]::</span>FromBase64String(<span style="color:orangered">$base64encodedconfiguration</span>)</span><br />[<span style="color:teal">xml<span style="color:darkgray">]<span style="color:orangered">$decodedxml</span> =</span><br /> <span style="color:darkgray">[<span style="color:teal">System.Text.Encoding<span style="color:darkgray">]::</span>UTF8<span style="color:darkgray">.</span>GetString(<span style="color:orangered">$d</span>)</span><br /><span style="color:blue">write</span><br /> <span style="color:orangered">$decodedxml<span style="color:darkgray">.</span>ChildNodes</span></span></span></span></span></span>
         </p>
