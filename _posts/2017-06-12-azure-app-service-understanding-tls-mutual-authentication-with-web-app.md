@@ -73,110 +73,110 @@ You can refer to my previous post on client certificate: [Client Certificate Aut
 * Following is a brief output of the command from the Kudu console of the web app. The Server is requesting for the client certificate in the second **Server Hello** message. See the text highlighted in **yellow**.
 <span style="font-size: small">
 
-  ```shell_session
-   D:\home>curl -v https://clientcertauth-demo.azurewebsites.net
 
-   * STATE: INIT => CONNECT handle 0x80073200; line 1103 (connection #-5000)
-  * Rebuilt URL to: https://clientcertauth-demo.azurewebsites.net/
-  * Added connection 0. The cache now contains 1 members
-  *   Trying 111.221.95.27…
-  * STATE: CONNECT => WAITCONNECT handle 0x80073200; line 1156 (connection #0)
-    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                   Dload  Upload   Total   Spent    Left  Speed
-    0     0    0     0    0     0      0      0 –:–:– –:–:– –:–:–     0* Connected to clientcertauth-demo.azurewebsites.net (111.221.95.27) port 443 (#0)
-  * STATE: WAITCONNECT => SENDPROTOCONNECT handle 0x80073200; line 1253 (connection #0)
-  * ALPN, offering http/1.1
-  * Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
-  * successfully set certificate verify locations:
-  *   CAfile: /usr/ssl/certs/ca-bundle.crt
-    CApath: none
-  * TLSv1.2 (OUT), TLS header, Certificate Status (22):
-  } [5 bytes data]
-  * TLSv1.2 (OUT), TLS handshake, Client hello (1):
-  } [512 bytes data]
-  * STATE: SENDPROTOCONNECT => PROTOCONNECT handle 0x80073200; line 1267 (connection #0)
-  ï»¿<!DOCTYPE html>
-  <html>
+    ```plaintext
+    curl -v https://clientcertauth-demo.azurewebsites.net
+    * STATE: INIT => CONNECT handle 0x80073200; line 1103 (connection #-5000)
+    * Rebuilt URL to: https://clientcertauth-demo.azurewebsites.net/
+    * Added connection 0. The cache now contains 1 members
+    *   Trying 111.221.95.27…
+    * STATE: CONNECT => WAITCONNECT handle 0x80073200; line 1156 (connection #0)
+      % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                     Dload  Upload   Total   Spent    Left  Speed
+      0     0    0     0    0     0      0      0 –:–:– –:–:– –:–:–     0
+    * Connected to clientcertauth-demo.azurewebsites.net (111.221.95.27) port 443 (#0)
+    * STATE: WAITCONNECT => SENDPROTOCONNECT handle 0x80073200; line 1253 (connection #0)
+    * ALPN, offering http/1.1
+    * Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+    * successfully set certificate verify locations:
+    *   CAfile: /usr/ssl/certs/ca-bundle.crt
+      CApath: none
+    * TLSv1.2 (OUT), TLS header, Certificate Status (22):
+    } [5 bytes data]
+    * TLSv1.2 (OUT), TLS handshake, Client hello (1):
+    } [512 bytes data]
+    * STATE: SENDPROTOCONNECT => PROTOCONNECT handle 0x80073200; line 1267 (connection #0)
+    ï»¿<!DOCTYPE html>
 
-  <————————–Trimmed HTML Response ————————–>
+    <————————–Trimmed HTML Response ————————–>
 
-  </html>
-  { [5 bytes data]
-  * TLSv1.2 (IN), TLS handshake, Server hello (2):
-  { [81 bytes data]
-  * TLSv1.2 (IN), TLS handshake, Certificate (11):
-  { [3245 bytes data]
-  * TLSv1.2 (IN), TLS handshake, Server key exchange (12):
-  { [333 bytes data]
-  * TLSv1.2 (IN), TLS handshake, Server finished (14):
-  { [4 bytes data]
-  * TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
-  } [70 bytes data]
-  * TLSv1.2 (OUT), TLS change cipher, Client hello (1):
-  } [1 bytes data]
-  * TLSv1.2 (OUT), TLS handshake, Finished (20):
-  } [16 bytes data]
-  * TLSv1.2 (IN), TLS change cipher, Client hello (1):
-  { [1 bytes data]
-  * TLSv1.2 (IN), TLS handshake, Finished (20):
-  { [16 bytes data]
-  * SSL connection using TLSv1.2 / ECDHE-RSA-AES256-SHA384
-  * ALPN, server did not agree to a protocol
-  * Server certificate:
-  *      subject: CN=*.azurewebsites.net
-  *      start date: Sep 28 21:45:23 2016 GMT
-  *      expire date: May  7 17:03:30 2018 GMT
-  *      subjectAltName: clientcertauth-demo.azurewebsites.net matched
-  *      issuer: C=US; ST=Washington; L=Redmond; O=Microsoft Corporation; OU=Microsoft IT; CN=Microsoft IT SSL SHA2
-  *      SSL certificate verify ok.
-  * STATE: PROTOCONNECT => DO handle 0x80073200; line 1288 (connection #0)
-  } [5 bytes data]
-  > GET / HTTP/1.1
-  > Host: clientcertauth-demo.azurewebsites.net
-  > User-Agent: curl/7.47.1
-  > Accept: */*
-  >
-  * STATE: DO => DO_DONE handle 0x80073200; line 1350 (connection #0)
-  * STATE: DO_DONE => WAITPERFORM handle 0x80073200; line 1477 (connection #0)
-  * STATE: WAITPERFORM => PERFORM handle 0x80073200; line 1487 (connection #0)
-  { [5 bytes data]
-  * TLSv1.2 (IN), TLS handshake, Hello request (0):
-  { [4 bytes data]
-  * TLSv1.2 (OUT), TLS handshake, Client hello (1):
-  } [512 bytes data]
-  * TLSv1.2 (IN), TLS handshake, Server hello (2):
-  { [105 bytes data]
-  * TLSv1.2 (IN), TLS handshake, Certificate (11):
-  { [3245 bytes data]
-  * TLSv1.2 (IN), TLS handshake, Server key exchange (12):
-  { [333 bytes data]
-  * TLSv1.2 (IN), TLS handshake, Request CERT (13):
-  { [30 bytes data]
-  * TLSv1.2 (IN), TLS handshake, Server finished (14):
-  { [4 bytes data]
-  * TLSv1.2 (OUT), TLS handshake, Certificate (11):
-  } [7 bytes data]
-  * TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
-  } [70 bytes data]
-  * TLSv1.2 (OUT), TLS change cipher, Client hello (1):
-  } [1 bytes data]
-  * TLSv1.2 (OUT), TLS handshake, Finished (20):
-  } [16 bytes data]
-  * TLSv1.2 (IN), TLS change cipher, Client hello (1):
-  { [1 bytes data]
-  * TLSv1.2 (IN), TLS handshake, Finished (20):
-  { [16 bytes data]
-  * HTTP 1.1 or later with persistent connection, pipelining supported
-  < HTTP/1.1 403 Forbidden
-  < Content-Type: text/html
-  * Server Microsoft-IIS/8.0 is not blacklisted
-  < Server: Microsoft-IIS/8.0
-  < Date: Fri, 09 Jun 2017 19:19:37 GMT
-  < Connection: close
-  < Content-Length: 2399
+    { [5 bytes data]
+    * TLSv1.2 (IN), TLS handshake, Server hello (2):
+    { [81 bytes data]
+    * TLSv1.2 (IN), TLS handshake, Certificate (11):
+    { [3245 bytes data]
+    * TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+    { [333 bytes data]
+    * TLSv1.2 (IN), TLS handshake, Server finished (14):
+    { [4 bytes data]
+    * TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+    } [70 bytes data]
+    * TLSv1.2 (OUT), TLS change cipher, Client hello (1):
+    } [1 bytes data]
+    * TLSv1.2 (OUT), TLS handshake, Finished (20):
+    } [16 bytes data]
+    * TLSv1.2 (IN), TLS change cipher, Client hello (1):
+    { [1 bytes data]
+    * TLSv1.2 (IN), TLS handshake, Finished (20):
+    { [16 bytes data]
+    * SSL connection using TLSv1.2 / ECDHE-RSA-AES256-SHA384
+    * ALPN, server did not agree to a protocol
+    * Server certificate:
+    *      subject: CN=*.azurewebsites.net
+    *      start date: Sep 28 21:45:23 2016 GMT
+    *      expire date: May  7 17:03:30 2018 GMT
+    *      subjectAltName: clientcertauth-demo.azurewebsites.net matched
+    *      issuer: C=US; ST=Washington; L=Redmond; O=Microsoft Corporation; OU=Microsoft IT; CN=Microsoft IT SSL SHA2
+    *      SSL certificate verify ok.
+    * STATE: PROTOCONNECT => DO handle 0x80073200; line 1288 (connection #0)
+    } [5 bytes data]
+    > GET / HTTP/1.1
+    > Host: clientcertauth-demo.azurewebsites.net
+    > User-Agent: curl/7.47.1
+    > Accept: */*
+    >
+    * STATE: DO => DO_DONE handle 0x80073200; line 1350 (connection #0)
+    * STATE: DO_DONE => WAITPERFORM handle 0x80073200; line 1477 (connection #0)
+    * STATE: WAITPERFORM => PERFORM handle 0x80073200; line 1487 (connection #0)
+    { [5 bytes data]
+    * TLSv1.2 (IN), TLS handshake, Hello request (0):
+    { [4 bytes data]
+    * TLSv1.2 (OUT), TLS handshake, Client hello (1):
+    } [512 bytes data]
+    * TLSv1.2 (IN), TLS handshake, Server hello (2):
+    { [105 bytes data]
+    * TLSv1.2 (IN), TLS handshake, Certificate (11):
+    { [3245 bytes data]
+    * TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+    { [333 bytes data]
+    * TLSv1.2 (IN), TLS handshake, Request CERT (13):
+    { [30 bytes data]
+    * TLSv1.2 (IN), TLS handshake, Server finished (14):
+    { [4 bytes data]
+    * TLSv1.2 (OUT), TLS handshake, Certificate (11):
+    } [7 bytes data]
+    * TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+    } [70 bytes data]
+    * TLSv1.2 (OUT), TLS change cipher, Client hello (1):
+    } [1 bytes data]
+    * TLSv1.2 (OUT), TLS handshake, Finished (20):
+    } [16 bytes data]
+    * TLSv1.2 (IN), TLS change cipher, Client hello (1):
+    { [1 bytes data]
+    * TLSv1.2 (IN), TLS handshake, Finished (20):
+    { [16 bytes data]
+    * HTTP 1.1 or later with persistent connection, pipelining supported
+    < HTTP/1.1 403 Forbidden
+    < Content-Type: text/html
+    * Server Microsoft-IIS/8.0 is not blacklisted
+    < Server: Microsoft-IIS/8.0
+    < Date: Fri, 09 Jun 2017 19:19:37 GMT
+    < Connection: close
+    < Content-Length: 2399
 
-  <————————–Trimmed ————————–>
-  ```
+    <————————–Trimmed ————————–>
+    ```
+
 
   Hope this clarifies few doubts on how TLS Mutual Auth works on Azure App Service.
 
