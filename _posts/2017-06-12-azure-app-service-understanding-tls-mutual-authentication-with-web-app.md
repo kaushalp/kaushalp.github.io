@@ -73,7 +73,7 @@ You can refer to my previous post on client certificate: [Client Certificate Aut
 * Following is a brief output of the command from the Kudu console of the web app. The Server is requesting for the client certificate in the second **Server Hello** message. See the text highlighted in **yellow**.
 <span style="font-size: small">
 
-  ```powershell
+  ```shell_session
    D:\home>curl -v https://clientcertauth-demo.azurewebsites.net
 
    * STATE: INIT => CONNECT handle 0x80073200; line 1103 (connection #-5000)
