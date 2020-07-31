@@ -245,29 +245,27 @@ The Server will now try to determine if there is an end point listening on the I
 - The HTTP.SYS tries to determine the certificate has corresponding to this IP+Port combination. It does so by enumerating the following registry key: - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\HTTP\Parameters\SslBindingInfo
 - From the above, the certificate hash corresponding to the IP+PORT combination is determined. Now the HTTP.SYS calls the CRYPTO API’s by passing on the cert hash to retrieve certificate blob, which calls the - certificate store, finds the certificate and sends it back to the HTTP.SYS.
 - The Server responds to the client with SERVER HELLO. [**RFC 3546**](ttp://tools.ietf.org/html/rfc3546) defines the format of the **SERVER HELLO**:      
-<div style="margin-left: 10pt">
-    <table style="background-color:#e6e6e6;font-family: consolas; font-size:11pt; color:black;width: 680px">
-    <colgroup> <col style="width: 779px" /></colgroup> <tr>
-        <td style="padding-left: 9px;padding-right: 9px;border: solid 0.5pt">
+
+<table style="margin:10pt; background-color:#e6e6e6;font-family: consolas; font-size:11pt; color:black;width: 680px">
+    <tr>
+        <td>
         <span style="font-family: courier new,courier;font-size: small">Blake-Wilson, et. al.            Standards Track                       [Page 5]</span><br /> 
-        <span style="font-family: courier new,courier;font-size: small">RFC 3546                          TLS Extensions                      June 2003</span></p>                 
-        <p>
-            <span style="font-family: courier new,courier;font-size: small">2.2. Extended Server Hello</span>
-        </p>                
-        <p>
-            <span style="font-family: courier new,courier;font-size: small">The extended server hello message format MAY be sent in place of the server hello message when the client has requested extended functionality via the extended client hello message specified in Section 2.1.  The extended server hello message format is:</span>
-        </p>                
-        <p>
-            <span style="font-family: courier new,courier;font-size: small">     </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00"> struct {</span><br /> <span style="font-family: courier new,courier;font-size: small">         </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00"> ProtocolVersion server_version;</span><br /> <span style="font-family: courier new,courier;font-size: small">         </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00"> Random random;</span><br /> <span style="font-family: courier new,courier;font-size: small">         </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00"> SessionID session_id;</span><br /> <span style="font-family: courier new,courier;font-size: small">         </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00"> CipherSuite cipher_suite;</span><br /> <span style="font-family: courier new,courier;font-size: small">         </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00"> CompressionMethod compression_method;</span><br /> <span style="font-family: courier new,courier;font-size: small">         </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00"> Extension server_hello_extension_list<0..2^16-1>;</span><br /> <span style="font-family: courier new,courier;font-size: small">     </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00"> } ServerHello;</span>
-        </p>                
-        <p>
-            <span style="font-family: courier new,courier;font-size: small">Here the new &#8220;server_hello_extension_list&#8221; field contains a list of extensions.  The actual &#8220;Extension&#8221; format is defined in Section 2.3.</span>
-        </p>                
-        <p>
-            <span style="font-family: courier new,courier;font-size: small"><span style="font-family: courier new,courier;font-size: small">Note that the extended server hello message is only sent in response to an extended client hello message.  This prevents the possibility that the extended server hello message could &#8220;break&#8221; existing TLS 1.0 clients. </span><br /> </span></td> </tr> 
-        </tbody> 
-    </table> 
-</div>                   
+        <span style="font-family: courier new,courier;font-size: small">RFC 3546                          TLS Extensions                      June 2003</span><br/>
+        <span style="font-family: courier new,courier;font-size: small">2.2. Extended Server Hello</span>
+        <span style="font-family: courier new,courier;font-size: small">The extended server hello message format MAY be sent in place of the server hello message when the client has requested extended functionality via the extended client hello message specified in Section 2.1.  The extended server hello message format is:</span><br/>
+        <span style="font-family: courier new,courier;font-size: small">     </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00">struct {</span><br /> 
+        <span style="font-family: courier new,courier;font-size: small">         </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00">ProtocolVersion server_version;</span><br /> 
+        <span style="font-family: courier new,courier;font-size: small">         </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00">Random random;</span><br /> 
+        <span style="font-family: courier new,courier;font-size: small">         </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00">SessionID session_id;</span><br />
+        <span style="font-family: courier new,courier;font-size: small">         </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00">CipherSuite cipher_suite;</span><br/>
+        <span style="font-family: courier new,courier;font-size: small">         </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00">CompressionMethod compression_method;</span><br/>
+        <span style="font-family: courier new,courier;font-size: small">         </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00">Extension server_hello_extension_list<0..2^16-1>;</span><br/>
+        <span style="font-family: courier new,courier;font-size: small">     </span><span style="font-family: courier new,courier;font-size: small;background-color: #ffff00">} ServerHello;</span><br/>
+        <span style="font-family: courier new,courier;font-size: small">Here the new &#8220;server_hello_extension_list&#8221; field contains a list of extensions.  The actual &#8220;Extension&#8221; format is defined in Section 2.3.</span><br/>
+        <span style="font-family: courier new,courier;font-size: small"><span style="font-family: courier new,courier;font-size: small">Note that the extended server hello message is only sent in response to an extended client hello message.  This prevents the possibility that the extended server hello message could &#8220;break&#8221; existing TLS 1.0 clients. </span><br /> </span>
+        </td>
+    </tr> 
+</table> 
 
 - The Server typically responds back with the following details:
     - SSL/TLS Protocol version.
@@ -361,7 +359,6 @@ Servers also tend to propagate this information through some sort of server logg
         </td>
     </tr>
 </table> 
-
 
 However, not all the alerts are fatal. Reproduce the issue and review the error message being logged. 
 
